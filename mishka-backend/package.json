@@ -1,0 +1,41 @@
+{
+  "name": "vidly",
+  "version": "1.0.0",
+  "description": "An ecommerce website for selling clothes and fashion stuff in Canada & USA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "12.16.3"
+  },
+  "author": "Anus Baig",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@sentry/node": "^5.17.0",
+    "axios": "^0.19.2",
+    "bcrypt": "^5.0.0",
+    "compression": "^1.7.4",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "fawn": "^2.1.5",
+    "helmet": "^3.22.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.9.18",
+    "mysql": "^2.18.1",
+    "pug": "^3.0.0",
+    "winston": "^3.2.1",
+    "winston-mongodb": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "morgan": "^1.10.0",
+    "debugg": "0.0.1"
+  }
+}

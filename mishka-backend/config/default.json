@@ -1,0 +1,13 @@
+{
+    "name": "Mishka Beauty",
+    "description": "An ecommerce website for selling clothes and fashion stuff in Canada & USA",
+    "version": "1.0.0",
+    "PORT": "",
+    "requireAuths": false,
+    "credentials": {
+        "username": "mishka@admin",
+        "password": "mishka@admin",
+        "dbConString": "",
+        "jwtPrivateKey": ""
+    }
+}
