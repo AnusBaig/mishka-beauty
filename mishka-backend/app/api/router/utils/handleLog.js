@@ -1,5 +1,5 @@
 // const utilDebug= require('debugg')('util_handleLog:debug');
-const logger = require('../../utils/logger');
+const logger = require('../../../utils/logger');
 
 function handleLog(message) {
     logger.info(message);

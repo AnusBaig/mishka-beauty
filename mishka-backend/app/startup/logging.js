@@ -1,9 +1,9 @@
 // const debug= require('debugg')('app:debug');
-require('../src/services/loggingService');
+require('../services/loggingService');
 const config = require('config');
 const {
     handleSevereErrorResponse
-} = require('../router/utils/handleLog');
+} = require('../api/router/utils/handleLog');
 require('express-async-errors');
 
 module.exports = function () {

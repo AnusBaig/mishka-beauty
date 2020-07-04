@@ -1,23 +1,20 @@
 const {
     handleSevereErrorResponse,
     handleLog
-} = require('../router/utils/handleLog');
-const mongoose = require('mongoose');
-const Fawn = require('fawn');
-
-const conString = process.env.db_connection_string;
+} = require('../api/router/utils/handleLog');
+const db = require('../db/utils/database');
 
 async function connect() {
     try {
-        await mongoose.connect(conString, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true
+        db.connect(err => {
+            if (err) {
+                console.log('DB not connected');
+                throw err;
+            }
         });
-        Fawn.init(mongoose);
-        handleLog(`Connected to mongoDb server at ${conString}...`);
+        // handleLog(`Connected to mysql server...`);
     } catch (ex) {
-        handleSevereErrorResponse(`Cannot connect to mongodb at ${conString}...`);
+        handleSevereErrorResponse(`Cannot connect to db...`);
     }
 }
 
@@ -31,6 +28,5 @@ function createModel(collectionName, schema) {
 
 module.exports = {
     connect,
-    createModel,
-    Fawn
+    createModel
 };
