@@ -1,0 +1,8 @@
+DELIMITER $$
+
+CREATE OR REPLACE PROCEDURE GetAllCustomers()
+BEGIN
+	SELECT *  FROM customer_table;
+END $$
+
+DELIMITER ;

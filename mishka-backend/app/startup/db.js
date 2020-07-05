@@ -10,6 +10,8 @@ async function connect() {
             if (err) {
                 console.log('DB not connected');
                 throw err;
+            } else {
+                console.log('DB connected');
             }
         });
         // handleLog(`Connected to mysql server...`);

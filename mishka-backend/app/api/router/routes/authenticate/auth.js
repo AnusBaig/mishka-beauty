@@ -1,7 +1,4 @@
 const {
-    handlePost
-} = require('../../utils/handleRoutesCRUD');
-const {
     validateUser
 } = require('../../utils/validateClient');
 const {

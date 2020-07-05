@@ -5,5 +5,6 @@ module.exports = mysql.createConnection({
     host: '108.179.243.148',
     user: 'nhnxayvj_omama',
     password: '123456',
-    database: 'nhnxayvj_mishka1'
+    database: 'nhnxayvj_mishka1',
+    multipleStatements: true
 });

@@ -4,7 +4,7 @@ const {
     handleErrorResponse,
     handleLog
 } = require('../../router/utils/handleLog');
-const config = require('../../../config/default.json');
+const config = require('../../../../config/default.json');
 
 function auth(req, res, next) {
     try {
