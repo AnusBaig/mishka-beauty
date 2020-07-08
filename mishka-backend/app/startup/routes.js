@@ -1,5 +1,4 @@
 const error = require('../api/middleware/error');
-const test = require('../api/router/routes/test');
 const customers = require('../api/router/routes/customers');
 // const auth = require('../api/router/routes/authenticate/auth');
 const cors = require('cors');
@@ -17,7 +16,6 @@ module.exports = function (app) {
         extended: true
     }));
     app.use('/api/customers', customers);
-    app.use('/api/test', test);
     // app.use('/api/auth', auth);
     app.use(error);
 };
