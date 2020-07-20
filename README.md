@@ -1,1 +1,1 @@
-# mishka-beauty
+# Mishka Beauty - Ecommerce Buisness
