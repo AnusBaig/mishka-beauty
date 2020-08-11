@@ -1,0 +1,19 @@
+{
+  "name": "mishka-beauty",
+  "version": "1.0.0",
+  "description": "\"An E-Commerce site\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnusBaig/mishka-beauty.git"
+  },
+  "author": "Omama, Aqib, Anus, Hanzala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnusBaig/mishka-beauty/issues"
+  },
+  "homepage": "https://github.com/AnusBaig/mishka-beauty#readme"
+}
