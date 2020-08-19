@@ -1221,6 +1221,23 @@ END$$
 DELIMITER ;
 
 -- -----------------------------------------------------
+-- procedure getProductById
+-- -----------------------------------------------------
+
+DELIMITER $$
+USE `e-commerce`$$
+CREATE PROCEDURE `getProductById`(IN pid INTEGER(11))
+BEGIN
+	IF productExists(pid) THEN
+		SELECT *, TRUE AS "Success" FROM product_view WHERE product_id = pid;
+	ELSE
+		SELECT CONCAT("Product: ", pid, " doesnot exists") AS "Message", FALSE AS "Success"; 
+	END IF;
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
 -- function validateActivationKey
 -- -----------------------------------------------------
 
@@ -1434,6 +1451,14 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+-- -----------------------------------------------------
+-- View `e-commerce`.`product_view`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `e-commerce`.`product_view`;
+USE `e-commerce`;
+CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `e-commerce`.`product_view` AS select `pt`.`product_id` AS `product_id`,`pt`.`brand_id` AS `brand_id`,`pt`.`groupcategory_id` AS `groupcategory_id`,`pdt`.`name` AS `name`,`pdt`.`stock` AS `stock`,`pdt`.`price` AS `price`,`pdt`.`rating` AS `rating`,`pdt`.`total_raters` AS `total_raters`,`pdt`.`orders` AS `orders`,`pat`.`attribute_key` AS `attribute_key`,`pat`.`attribute_value` AS `attribute_value`,`pvt`.`variation_id` AS `varient_id`,`pvt`.`attribute_key` AS `variation_attributes` from (((`e-commerce`.`product_table` `pt` join `e-commerce`.`product_description_table` `pdt` on((`pt`.`product_id` = `pdt`.`product_id`))) join `e-commerce`.`product_attributes_table` `pat` on((`pt`.`product_id` = `pat`.`product_id`))) left join `e-commerce`.`product_variation_table` `pvt` on((`pt`.`product_id` = `pvt`.`product_id`)));
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
