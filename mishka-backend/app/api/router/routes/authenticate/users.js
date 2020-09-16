@@ -78,16 +78,4 @@ router.post("/", async (req, res) => {
         .send(user);
 });
 
-router.put(
-    "/:id",
-    auth,
-    async (req, res)
-);
-
-router.delete(
-    "/:id",
-    [auth, authAdmin],
-    async (req, res)
-);
-
 module.exports = router;

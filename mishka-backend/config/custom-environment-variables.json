@@ -1,8 +1,18 @@
 {
-    "credentials": {
-        "username": "login_username",
-        "password": "login_password",
-        "dbConString": "db_connection_string",
-        "jwtPrivateKey": "mishka_jwtPrivateKey"
+    "appConfig": {
+        "PORT": "PORT"
+    },
+    "dbConfig": {
+        "host": "mishka_db_host",
+        "user": "mishka_db_username",
+        "password": "mishka_db_password",
+        "database": "mishka_db_database"
+    },
+    "adminCredentials": {
+        "username": "mishka_login_username",
+        "password": "mishka_login_password"
+    },
+    "auth": {
+        "token": "mishka_jwt_key"
     }
 }

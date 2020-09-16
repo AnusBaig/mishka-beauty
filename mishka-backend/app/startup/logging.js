@@ -10,5 +10,4 @@ module.exports = function () {
     process
         .on('uncaughtException', e => handleSevereErrorResponse(e.stack, e))
         .on('unhandledRejection', e => handleSevereErrorResponse(e.stack, e));
-
 }

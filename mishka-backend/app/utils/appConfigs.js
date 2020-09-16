@@ -1,0 +1,1 @@
+module.exports.getAppUrl = (req) => `${req.protocol}://${req.hostname}:${req.port}`;

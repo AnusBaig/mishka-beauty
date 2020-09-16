@@ -1,5 +1,6 @@
 {
-    "name": "mishka@dev",
+    "username": "mishka@dev",
+    "PORT": 3000,
     "version": "1.0.0",
     "requireAuths": false
 }

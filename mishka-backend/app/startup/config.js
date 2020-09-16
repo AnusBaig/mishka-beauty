@@ -1,7 +1,7 @@
 const {
     handleSevereErrorResponse
 } = require('../api/router/utils/handleLog');
-const config = require('../../config/development.json');
+const config = require('config'); //../../config/development.json');
 
 module.exports = function () {
     if (config['requireAuths'] && !process.env.mishka_jwtPrivateKey)

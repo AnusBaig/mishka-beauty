@@ -13,7 +13,7 @@ function auth(req, res, next) {
             if (!token)
                 return handleErrorResponse('Access denied. No token provided', res, 401);
 
-            const decoded = jwt.verify(token, process.env.mishka_jwtPrivateKey);
+            const decoded = jwt.verify(token, process.env.mishka_jwt_key);
             req.user = decoded;
         }
         next();

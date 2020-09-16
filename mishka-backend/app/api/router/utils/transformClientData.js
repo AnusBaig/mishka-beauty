@@ -5,25 +5,32 @@ const {
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken');
 
-async function makeHashed(req) {
+async function hashedPassword(req) {
     let salt = await bcrypt.genSalt(10);
     let hashed = await bcrypt.hash(req.body.password, salt);
     req.body.password = hashed;
 }
 
+async function makeHashed(data, saltWeight = 15) {
+    let salt = await bcrypt.genSalt(saltWeight);
+    let hashed = await bcrypt.hash(data, salt);
+    return hashed;
+}
+
 function generateAuthToken({
-    id,
-    name,
-    email
+    username,
+    email,
+    isAdmin
 }) {
     return jwt.sign({
-        name,
+        username,
         email,
-        id
-    }, process.env.mishka_jwtPrivateKey);
+        isAdmin
+    }, process.env.mishka_jwt_key);
 };
 
 module.exports = {
     makeHashed,
+    hashedPassword,
     generateAuthToken
 }

@@ -1,4 +1,6 @@
 {
-    "name": "mishka@prod",
-    "version": "1.0.0"
+    "username": "mishka@prod",
+    "PORT": 5500,
+    "version": "1.0.0",
+    "requireAuths": true
 }
