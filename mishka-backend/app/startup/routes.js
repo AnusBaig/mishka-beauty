@@ -2,11 +2,13 @@ const error = require("../api/middleware/error");
 const passport = require("../services/authenticionService");
 const customer = require("../api/router/routes/customerRoute");
 const auth = require("../api/router/routes/authenticate/authRoute");
+const product = require("../api/router/routes/getProductInfo");
+const cartApi = require("../api/router/routes/cartApi");
 const cors = require("cors");
 const setPort = require("../api/middleware/setPort");
 const express = require("express");
 
-module.exports = function (app, port) {
+module.exports = function(app, port) {
     if (app.get("env") === "development") {
         const morgan = require("morgan");
         app.use(morgan("tiny"));
@@ -27,5 +29,7 @@ module.exports = function (app, port) {
     app.use(passport.session());
     app.use("/api/auth", auth);
     app.use("/api/customer", customer);
+    app.use("/api/products", product);
+    app.use("/api",cartApi)
     app.use(error);
 };
